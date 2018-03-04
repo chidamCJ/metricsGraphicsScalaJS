@@ -19,7 +19,7 @@ object MGWrapper {
         "area"       -> true,
         "data"       -> data,
         "width"      -> 650,
-        "height"     -> 250,
+        "height"     -> 200,
         "target"     -> document.getElementById("chart"),
         "x_accessor" -> "over",
         "y_accessor" -> "score"
