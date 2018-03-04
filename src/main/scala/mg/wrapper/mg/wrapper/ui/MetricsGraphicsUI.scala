@@ -1,7 +1,7 @@
 package mg.wrapper.mg.wrapper.ui
 
 import mg.wrapper.MGWrapper
-import mg.wrapper.MGWrapper.ChartParams
+import mg.wrapper.charts._
 
 object MetricsGraphicsUI {
 
