@@ -3,11 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <title>The Scala.js Tutorial</title>
+    <link href="./css/metricsgraphics.css" rel="stylesheet" type="text/css"/>
+
   </head>
   <body>
-    <!-- Include JavaScript dependencies -->
-    <script type="text/javascript" src="./target/scala-2.12/scala-js-tutorial-jsdeps.js"></script>
-    <!-- Include Scala.js compiled code -->
-    <script type="text/javascript" src="./target/scala-2.12/scala-js-tutorial-opt.js"></script>
+  <div id="chart">
+
+  </div>
+
+  <button id="click-me-button" type="button">
+    Click me!
+  </button>
+
+  <script src="./js/jquery.js"></script>
+  <script src="./js/d3.js"></script>
+  <script src="./js/metricsgraphics.js"></script>
+  <script src="./target/scala-2.11/mgwrapper-fastopt.js"></script>
+
   </body>
 </html>
