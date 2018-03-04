@@ -1,3 +1,7 @@
-# The Scala.js tutorial
+# ScalaJS wrapper for MetricsGraphics
 
-This repository contains the code accompanying the [Scala.js tutorial](http://www.scala-js.org/doc/tutorial.html)
+A simple ScalaJS wrapper for [MetricsGraphics](http://metricsgraphicsjs.org).
+
+
+### Usage
+

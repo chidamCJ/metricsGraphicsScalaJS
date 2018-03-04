@@ -1,12 +1,10 @@
 package mg.wrapper
 
 import org.scalajs.dom.document
-
+import charts._
 import scala.scalajs.js
 
 object MGWrapper {
-
-  case class ChartParams(title: String)
 
   def write(chartParams: ChartParams) = {
     val data = js.Array(
@@ -18,7 +16,7 @@ object MGWrapper {
     MG(
       js.Dynamic.literal(
         "title"      -> chartParams.title,
-        "area"       -> false,
+        "area"       -> true,
         "data"       -> data,
         "width"      -> 650,
         "height"     -> 250,
