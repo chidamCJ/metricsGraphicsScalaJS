@@ -9,7 +9,7 @@ import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel }
 @JSExportTopLevel("mgui")
 object MetricsGraphicsUI {
 
-  private val data = SingleDataSet(
+  private val data = SingleSeries(
     Array(
       DataRow(Array(DataColumn("over", 1), DataColumn("score", 12))),
       DataRow(Array(DataColumn("over", 2), DataColumn("score", 18))),
@@ -28,9 +28,9 @@ object MetricsGraphicsUI {
     )
   )
 
-  private val multiData = MultiDataSet(
+  private val multiData = MultiSeries(
     Array(
-      SingleDataSet(
+      SingleSeries(
         Array(
           DataRow(Array(DataColumn("over", 1), DataColumn("score", 12))),
           DataRow(Array(DataColumn("over", 2), DataColumn("score", 18))),
@@ -38,7 +38,7 @@ object MetricsGraphicsUI {
           DataRow(Array(DataColumn("over", 4), DataColumn("score", 8)))
         )
       ),
-      SingleDataSet(
+      SingleSeries(
         Array(
           DataRow(Array(DataColumn("over", 1), DataColumn("score", 3))),
           DataRow(Array(DataColumn("over", 2), DataColumn("score", 10))),
@@ -46,7 +46,7 @@ object MetricsGraphicsUI {
           DataRow(Array(DataColumn("over", 4), DataColumn("score", 15)))
         )
       ),
-      SingleDataSet(
+      SingleSeries(
         Array(
           DataRow(Array(DataColumn("over", 1), DataColumn("score", 33))),
           DataRow(Array(DataColumn("over", 2), DataColumn("score", 13))),

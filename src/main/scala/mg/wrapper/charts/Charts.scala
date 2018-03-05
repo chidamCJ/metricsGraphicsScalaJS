@@ -5,10 +5,10 @@ import org.scalajs.dom.document
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
 
-case class ChartParams(title: String, id: String, dataSet: Either[SingleDataSet, MultiDataSet]) {
+case class ChartParams(title: String, id: String, dataSet: Either[SingleSeries, MultiSeries]) {
 
   def populate = {
-    println(s"plotting ${title} ${id} ${dataSet.isLeft} ${dataSet.isRight}")
+    println(s"plotting $title $id ${dataSet.isLeft} ${dataSet.isRight}")
     js.Dynamic.literal(
       "title"      -> title,
       "area"       -> true,
@@ -29,9 +29,9 @@ case class DataRow(cols: Array[DataColumn]) {
   def asDict = js.Dictionary(cols.map(x => (x.key, x.value)): _*)
 }
 
-case class SingleDataSet(rows: Array[DataRow]) {
+case class SingleSeries(rows: Array[DataRow]) {
   def asJs = rows.map(_.asDict).toJSArray
 }
-case class MultiDataSet(rowsArray: Array[SingleDataSet]) {
+case class MultiSeries(rowsArray: Array[SingleSeries]) {
   def asJs = rowsArray.map(_.asJs).toJSArray
 }
