@@ -1,6 +1,6 @@
 enablePlugins(ScalaJSPlugin)
 
-name := "mgWrapperDemoUi"
+name := "mgwrapper-examples"
 
 version := "0.1.0"
 
