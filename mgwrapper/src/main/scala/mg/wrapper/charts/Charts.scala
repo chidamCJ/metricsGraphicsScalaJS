@@ -8,7 +8,6 @@ import scala.scalajs.js.JSConverters._
 case class ChartParams(title: String, id: String, dataSet: Either[SingleSeries, MultiSeries]) {
 
   def populate = {
-    println(s"plotting $title $id ${dataSet.isLeft} ${dataSet.isRight}")
     js.Dynamic.literal(
       "title"      -> title,
       "area"       -> true,

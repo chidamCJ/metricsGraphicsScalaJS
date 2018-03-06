@@ -1,12 +1,12 @@
-package mg.wrapper.mg.wrapper.ui
+package mg.wrapper.ui
 
 import mg.wrapper.MGWrapper
 import mg.wrapper.charts._
 import org.scalajs.dom.document
 
-import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel }
+import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
 
-@JSExportTopLevel("mgui")
+@JSExportTopLevel("MGWrapper")
 object MetricsGraphicsUI {
 
   private val data = SingleSeries(
