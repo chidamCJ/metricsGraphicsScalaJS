@@ -4,7 +4,7 @@ import mg.wrapper.MGWrapper
 import mg.wrapper.charts._
 import org.scalajs.dom.document
 
-import scala.scalajs.js.annotation.{JSExport, JSExportTopLevel}
+import scala.scalajs.js.annotation.{ JSExport, JSExportTopLevel }
 
 @JSExportTopLevel("MGWrapper")
 object MetricsGraphicsUI {
@@ -60,13 +60,13 @@ object MetricsGraphicsUI {
   @JSExport
   def drawSingleGraph() = {
     document.body.appendChild(chartElem("chart"))
-    MGWrapper.plot(ChartParams("single chart data", "chart", Left(data)))
+    MGWrapper.plot(ChartParams("single chart data", "chart", "histogram", Left(data)))
   }
 
   @JSExport
   def drawMultiGraph() = {
     document.body.appendChild(chartElem("multichart"))
-    MGWrapper.plot(ChartParams("multi chart data", "multichart", Right(multiData)))
+    MGWrapper.plot(ChartParams("multi chart data", "multichart", "line", Right(multiData)))
   }
 
   private def chartElem(id: String) = {

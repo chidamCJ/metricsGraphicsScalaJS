@@ -5,11 +5,12 @@ import org.scalajs.dom.document
 import scala.scalajs.js
 import scala.scalajs.js.JSConverters._
 
-case class ChartParams(title: String, id: String, dataSet: Either[SingleSeries, MultiSeries]) {
+case class ChartParams(title: String, id: String, charType: String, dataSet: Either[SingleSeries, MultiSeries]) {
 
-  def populate = {
+  def populate =
     js.Dynamic.literal(
       "title"      -> title,
+      "chart_type" -> charType,
       "area"       -> true,
       "data"       -> (if (dataSet.isLeft) dataSet.left.get.asJs else dataSet.right.get.asJs),
       "width"      -> 600,
@@ -21,7 +22,6 @@ case class ChartParams(title: String, id: String, dataSet: Either[SingleSeries, 
       "x_accessor" -> "over",
       "y_accessor" -> "score"
     )
-  }
 }
 case class DataColumn(key: String, value: Double)
 case class DataRow(cols: Array[DataColumn]) {
