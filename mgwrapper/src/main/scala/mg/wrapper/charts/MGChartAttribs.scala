@@ -11,84 +11,67 @@ case class MGChartAttribs(title: String,
                           right: Int,
                           target: String,
                           x_accessor: String,
-                          y_accessor: String)
-    extends BaseChartAttributes {
-  override def getAttributes: Array[(String, Any)] =
-    Array(
-      "title" -> title,
-      "description" -> description,
-      "width" -> width,
-      "height" -> height,
-      "right" -> right,
-      "target" -> target,
-      "x_accessor" -> x_accessor,
-      "y_accessor" -> y_accessor
-    )
-}
-case class LineChart(title: String,
-                     description: String,
-                     width: Int,
-                     height: Int,
-                     right: Int,
-                     target: String,
-                     x_accessor: String,
-                     y_accessor: String)
-    extends BaseChartAttributes {
-  override def getAttributes: Array[(String, Any)] =
-    Array(
-      "title" -> title,
-      "description" -> description,
-      "width" -> width,
-      "height" -> height,
-      "right" -> right,
-      "target" -> target,
-      "x_accessor" -> x_accessor,
-      "y_accessor" -> y_accessor
-    )
-}
-case class ConfidenceBand(title: String,
-                          description: String,
-                          format: String,
-                          width: Int,
-                          height: Int,
-                          right: Int,
+                          y_accessor: String,
                           area: Boolean,
+                          linked: Boolean,
+                          xax_count: Int)
+    extends BaseChartAttributes {
+  override def getAttributes: Array[(String, Any)] =
+    Array(
+      "title" -> title,
+      "description" -> description,
+      "width" -> width,
+      "height" -> height,
+      "right" -> right,
+      "target" -> target,
+      "x_accessor" -> x_accessor,
+      "y_accessor" -> y_accessor,
+      "area" -> area,
+      "linked" -> linked,
+      "xax_count" -> xax_count
+    )
+}
+case class LineChart(baseAttributes: MGChartAttribs)
+    extends BaseChartAttributes {
+  override def getAttributes: Array[(String, Any)] =
+    Array(
+      ).++(baseAttributes.getAttributes)
+}
+case class ConfidenceBand(format: String,
                           target: String,
                           show_secondary_x_label: Boolean,
                           show_confidence_band: Array[String],
-                          x_extended_ticks: Boolean)
+                          x_extended_ticks: Boolean,
+                          baseAttributes: MGChartAttribs)
     extends BaseChartAttributes {
   override def getAttributes: Array[(String, Any)] =
     Array(
-      "title" -> title,
-      "description" -> description,
       "format" -> format,
-      "width" -> width,
-      "height" -> height,
-      "right" -> right,
-      "area" -> area,
       "target" -> target,
       "show_secondary_x_label" -> show_secondary_x_label,
       "show_confidence_band" -> show_confidence_band,
       "x_extended_ticks" -> x_extended_ticks
-    )
+    ).++(baseAttributes.getAttributes)
 }
-case class SmallRangeOfIntegers(title: String,
-                                description: String,
-                                interpolate: Any,
-                                width: Int,
-                                height: Int,
-                                right: Int,
-                                target: String)
+case class SmallRangeOfIntegers(interpolate: Any,
+                                baseAttributes: MGChartAttribs)
     extends BaseChartAttributes {
   override def getAttributes: Array[(String, Any)] =
     Array(
-      "title" -> title,
-      "description" -> description,
       "interpolate" -> interpolate,
-      "width" -> width,
-      "height" -> height,
-      "right" -> right,
-      "target" -> target,
-    )
+    ).++(baseAttributes.getAttributes)
+}
+case class LinkedGraphic(baseAttributes: MGChartAttribs)
+    extends BaseChartAttributes {
+  override def getAttributes: Array[(String, Any)] = {
+    Array(
+      ).++(baseAttributes.getAttributes)
+  }
+}
+case class OtherLinkedGraphic(baseAttributes: MGChartAttribs)
+    extends BaseChartAttributes {
+  override def getAttributes: Array[(String, Any)] = {
+    Array(
+      ).++(baseAttributes.getAttributes)
+  }
 }
