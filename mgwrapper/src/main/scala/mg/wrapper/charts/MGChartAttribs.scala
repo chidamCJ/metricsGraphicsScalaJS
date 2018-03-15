@@ -31,8 +31,9 @@ case class MGChartAttribs(title: String,
       "xax_count" -> xax_count
     )
 }
+
 case class ConfidenceBand(format: String,
-                          target: String,
+                          area: Boolean,
                           show_secondary_x_label: Boolean,
                           show_confidence_band: Array[String],
                           x_extended_ticks: Boolean,

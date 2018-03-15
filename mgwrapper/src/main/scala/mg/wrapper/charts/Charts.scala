@@ -23,6 +23,17 @@ case class ChartParams(title: String, id: String, charType: String, dataSet: Eit
       "y_accessor" -> "score"
     )
 }
+
+case class MGChartParams(chartAttributes: BaseChartAttributes, dataSet: Either[SingleSeries, MultiSeries]) {
+
+  def populate =
+    js.Dynamic.literal(
+      chartAttributes.getAttributes.++(
+        Array("data" -> (if (dataSet.isLeft) dataSet.left.get.asJs else dataSet.right.get.asJs))
+      ): _*
+    )
+}
+
 case class DataColumn(key: String, value: Double)
 case class DataRow(cols: Array[DataColumn]) {
   def asDict = js.Dictionary(cols.map(x => (x.key, x.value)): _*)
