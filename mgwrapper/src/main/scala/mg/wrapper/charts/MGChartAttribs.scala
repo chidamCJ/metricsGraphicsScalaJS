@@ -18,17 +18,17 @@ case class MGChartAttribs(title: String,
     extends BaseChartAttributes {
   override def getAttributes: Array[(String, Any)] =
     Array(
-      "title" -> title,
+      "title"       -> title,
       "description" -> description,
-      "width" -> width,
-      "height" -> height,
-      "right" -> right,
-      "target" -> target,
-      "x_accessor" -> x_accessor,
-      "y_accessor" -> y_accessor,
-      "area" -> area,
-      "linked" -> linked,
-      "xax_count" -> xax_count
+      "width"       -> width,
+      "height"      -> height,
+      "right"       -> right,
+      "target"      -> target,
+      "x_accessor"  -> x_accessor,
+      "y_accessor"  -> y_accessor,
+      "area"        -> area,
+      "linked"      -> linked,
+      "xax_count"   -> xax_count
     )
 }
 
@@ -41,26 +41,17 @@ case class ConfidenceBand(format: String,
     extends BaseChartAttributes {
   override def getAttributes: Array[(String, Any)] =
     Array(
-      "format" -> format,
-      "target" -> target,
+      "format"                 -> format,
       "show_secondary_x_label" -> show_secondary_x_label,
-      "show_confidence_band" -> show_confidence_band,
-      "x_extended_ticks" -> x_extended_ticks
+      "show_confidence_band"   -> show_confidence_band,
+      "x_extended_ticks"       -> x_extended_ticks
     ).++(baseAttributes.getAttributes)
 }
-case class SmallRangeOfIntegers(interpolate: String,
-                                baseAttributes: MGChartAttribs)
-    extends BaseChartAttributes {
-  override def getAttributes: Array[(String, Any)] =
-    Array(
-      "interpolate" -> interpolate,
-    ).++(baseAttributes.getAttributes)
+
+case class SmallRangeOfIntegers(interpolate: String, baseAttributes: MGChartAttribs) extends BaseChartAttributes {
+  override def getAttributes: Array[(String, Any)] = Array("interpolate" -> interpolate).++(baseAttributes.getAttributes)
 }
-case class ChangingSingleLineColor(color: String,
-                                   baseAttributes: MGChartAttribs)
-    extends BaseChartAttributes {
-  override def getAttributes: Array[(String, Any)] =
-    Array(
-      "color" -> color
-    ).++(baseAttributes.getAttributes)
+
+case class ChangingSingleLineColor(color: String, baseAttributes: MGChartAttribs) extends BaseChartAttributes {
+  override def getAttributes: Array[(String, Any)] = Array("color" -> color).++(baseAttributes.getAttributes)
 }

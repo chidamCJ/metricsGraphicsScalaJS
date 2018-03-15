@@ -10,7 +10,7 @@ scalaJSUseMainModuleInitializer := true
 
 libraryDependencies ++= Seq(
   "org.scala-js" %%% "scalajs-dom" % "0.9.1",
-  "mgwrapper"    %%% "mgwrapper"   % "0.1.0"
+  "mgwrapper"    %%% "mgwrapper"   % "0.1.1"
 )
 
 skip in packageJSDependencies := false
