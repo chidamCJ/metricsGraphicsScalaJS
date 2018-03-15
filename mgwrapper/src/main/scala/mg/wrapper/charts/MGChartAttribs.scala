@@ -31,12 +31,6 @@ case class MGChartAttribs(title: String,
       "xax_count" -> xax_count
     )
 }
-case class LineChart(baseAttributes: MGChartAttribs)
-    extends BaseChartAttributes {
-  override def getAttributes: Array[(String, Any)] =
-    Array(
-      ).++(baseAttributes.getAttributes)
-}
 case class ConfidenceBand(format: String,
                           target: String,
                           show_secondary_x_label: Boolean,
@@ -53,7 +47,7 @@ case class ConfidenceBand(format: String,
       "x_extended_ticks" -> x_extended_ticks
     ).++(baseAttributes.getAttributes)
 }
-case class SmallRangeOfIntegers(interpolate: Any,
+case class SmallRangeOfIntegers(interpolate: String,
                                 baseAttributes: MGChartAttribs)
     extends BaseChartAttributes {
   override def getAttributes: Array[(String, Any)] =
@@ -61,17 +55,11 @@ case class SmallRangeOfIntegers(interpolate: Any,
       "interpolate" -> interpolate,
     ).++(baseAttributes.getAttributes)
 }
-case class LinkedGraphic(baseAttributes: MGChartAttribs)
+case class ChangingSingleLineColor(color: String,
+                                   baseAttributes: MGChartAttribs)
     extends BaseChartAttributes {
-  override def getAttributes: Array[(String, Any)] = {
+  override def getAttributes: Array[(String, Any)] =
     Array(
-      ).++(baseAttributes.getAttributes)
-  }
-}
-case class OtherLinkedGraphic(baseAttributes: MGChartAttribs)
-    extends BaseChartAttributes {
-  override def getAttributes: Array[(String, Any)] = {
-    Array(
-      ).++(baseAttributes.getAttributes)
-  }
+      "color" -> color
+    ).++(baseAttributes.getAttributes)
 }
