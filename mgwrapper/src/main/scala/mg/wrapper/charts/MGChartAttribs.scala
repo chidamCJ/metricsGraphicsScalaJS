@@ -1,7 +1,6 @@
 package mg.wrapper.charts
 
-sealed traitdd
-BaseChartAttributes {
+sealed trait BaseChartAttributes {
   def getAttributes: Array[(String, Any)]
 }
 
@@ -43,7 +42,6 @@ case class ConfidenceBand(format: String,
   override def getAttributes: Array[(String, Any)] =
     Array(
       "format" -> format,
-      "target" -> target,
       "show_secondary_x_label" -> show_secondary_x_label,
       "show_confidence_band" -> show_confidence_band,
       "x_extended_ticks" -> x_extended_ticks
