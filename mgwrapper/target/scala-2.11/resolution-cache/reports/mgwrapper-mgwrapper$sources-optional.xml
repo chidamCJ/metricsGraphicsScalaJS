@@ -4,10 +4,10 @@
 	<info
 		organisation="mgwrapper"
 		module="mgwrapper$sources"
-		revision="0.1.0"
+		revision="0.1.1"
 		conf="optional"
 		confs="compile, runtime, test, provided, optional, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, phantom-js-jetty"
-		date="20180315181445"/>
+		date="20180316185744"/>
 	<dependencies>
 	</dependencies>
 </ivy-report>
